@@ -249,8 +249,7 @@ services:
     restart: unless-stopped
 
   moodle:
-    image: lthub/moodle:education-4.5.8  # หากไม่สามารถโหลด image นี้ได้ ให้ลองใช้ lthub/moodle:latest หรือระบุ platform ตามบรรทัดด้านล่าง
-    #platform: linux/arm64   # กรณีใช้บน Macbook สามารถใช้ image lthub/moodle:education-4.5.8 ได้ โดยระบุ platform (เอาเครื่องหมาย # ด้านหน้าออก)
+    image: lthub/moodle:education-4.5.8  # หากไม่สามารถโหลด image นี้ได้ ให้ลองใช้ lthub/moodle:latest
     container_name: moodle_app
     ports:
       - "80:80" # กรณีที่เครื่องมี Web Server ที่ใช้งาน Port 80 อยู่แล้ว ให้เปลี่ยน Port เป็น "8080:80"  และการใช้งานต้องระบุ Port เป็น //localhost:8080
@@ -260,8 +259,6 @@ services:
       MOODLE_DB_NAME: moodle
       MOODLE_DB_USER: moodleuser
       MOODLE_DB_PASSWORD: moodlepassword # แก้ไขรหัสผ่านให้เป็นของตนเอง ให้ตรงกับรหัสผ่าน MYSQL_PASSWORD ด้านบน
-      MOODLE_URL: 'http://localhost'
-      
     volumes:
       - moodledata:/moodledata
     depends_on:
@@ -294,7 +291,6 @@ volumes:
 - `MYSQL_PASSWORD`: password สำหรับ Moodle
 - `MOODLE_DB_TYPE`: ชนิดของ database
 - `MOODLE_DB_HOST`: ชื่อ hostname ของ database (ชี้ไปที่ service `db`)
-- `MOODLE_URL`: http://localhost
 
 **Volumes:**
 - `db_data`: เก็บข้อมูล MariaDB
@@ -329,8 +325,10 @@ docker pull mariadb:latest
 ```
 
 **บันทึกผลการทดลอง 1:**
-```bash
- รูปผลการโหลด Images ที่สมบูรณ์ 
+``bash
+<img width="902" height="839" alt="image" src="https://github.com/user-attachments/assets/1a2e6977-5756-4138-a238-dc0f05c128e2" />
+
+
 ```
 #### 2.2 รัน Docker Compose
 
@@ -352,8 +350,9 @@ Creating moodle_app ... done
 ```
 
 **บันทึกผลการทดลอง 2:**
-```bash
- รูปผลการรัน docker-compose ที่สมบูรณ์ 
+``bash
+<img width="1546" height="130" alt="image" src="https://github.com/user-attachments/assets/204d83c6-ab58-4073-b78f-9cc075eee061" />
+
 ```
 
 #### 2.3 ตรวจสอบสถานะ Containers
@@ -374,8 +373,9 @@ moodle_db     docker-entrypoint.sh mariadbd    Up      3306/tcp
 - **Ports** = Port mapping ที่ใช้งาน
   
 **บันทึกผลการทดลอง 3:**
-```bash
- รูปผลการรัน docker-compose ps
+``bash
+ <img width="1035" height="78" alt="image" src="https://github.com/user-attachments/assets/f7176b79-fba1-4ee9-84f9-b150db54b59f" />
+
 ```
 
 
@@ -403,8 +403,9 @@ docker start moodle_app
 
 ```
 **บันทึกผลการทดลอง 4:**
-```bash
- รูปผลการรัน docker-compose logs 
+``bash
+<img width="1314" height="503" alt="image" src="https://github.com/user-attachments/assets/61e3f7f7-156b-4883-85d8-e0f173a86e4e" />
+
 ```
 
 #### 2.5 ตรวจสอบ Network และ Volumes
@@ -420,8 +421,9 @@ docker volume inspect moodle-docker_moodledata
 ```
 
 **บันทึกผลการทดลอง 5:**
-```bash
- รูปผลการรัน ตรวจสอบ volume
+``bash
+<img width="941" height="549" alt="image" src="https://github.com/user-attachments/assets/92f5aa63-57c7-4577-b9e1-30dd82ea15d1" />
+
 ```
 
 ---
@@ -474,6 +476,7 @@ docker volume inspect moodle-docker_moodledata
 ```bash
  รูปหน้า Dashboard 
 ```
+<img width="1919" height="989" alt="image" src="https://github.com/user-attachments/assets/0900f040-9b63-4dfb-b226-4fcf997aa8f2" />
 
 ---
 
@@ -614,8 +617,9 @@ h1 {
 - Favicon: 32x32 px (ICO/PNG)
 
 **บันทึกผลการทดลอง 6-1:**
-```bash
- รูป ผลการปรับแต่ง Theme
+``bash
+ <img width="1919" height="977" alt="image" src="https://github.com/user-attachments/assets/d6f19391-a8ae-4ce6-b9bf-04a40b19fb1a" />
+
 ```
 ---
 
@@ -653,6 +657,7 @@ Course Category ใช้จัดกลุ่มรายวิชาตาม�
 ```bash
  รูปหน้า  Category ที่มีการสร้างกลุ่ม ตามกลุ่มสาระของ สพฐ.
 ```
+<img width="1919" height="988" alt="image" src="https://github.com/user-attachments/assets/2778fda6-265a-4a69-9a14-a3e346d8b867" />
 
 #### 6.2.2 สร้าง Course (รายวิชา)
 
