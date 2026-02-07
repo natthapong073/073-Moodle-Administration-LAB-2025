@@ -726,8 +726,9 @@ Learning outcomes:
 4. คลิก **Save and display**
 
 **บันทึกผลการทดลอง 8:**
-```bash
- รูปหน้าผลลัพธ์การสร้างรายวิชา
+``bash
+ <img width="1919" height="990" alt="image" src="https://github.com/user-attachments/assets/338f2046-696d-4956-b0a5-fdd2323bf4d7" />
+
 ```
 
 ---
@@ -790,6 +791,7 @@ Programming, Python, Data Science
 ```bash
  รูปหน้า ผลการสร้าง User ใหม่
 ```
+<img width="1919" height="581" alt="image" src="https://github.com/user-attachments/assets/682d88e3-b4b2-43f4-a2e0-79d91109ec4c" />
 
 **วิธีที่ 2: Upload Users (CSV)**
 
